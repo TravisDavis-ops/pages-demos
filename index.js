@@ -79,3 +79,14 @@ async function getPokemonAtOnce(list = ["ditto", "squirtle", "grotle", "houndour
     //console.log(data0, data1, data2, data3);
 }
 getPokemonAtOnce();
+// Weather API
+const API_KEY = "e2c2f01a9184c7efcec6757e51818436";
+const API_URL = `http://api.openweathermap.org/data/2.5`
+
+async function getForcast(city="memphis"){
+    const response = await fetch(`${API_URL}/weather?q=${city}&appid=${API_KEY}`);
+    const data = await response.json();
+    console.log(data);
+}
+getForcast();
+///forecast?q={city name}&appid={API key}`
